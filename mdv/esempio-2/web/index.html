@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sample App</title>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+  </head>
+  <body>
+  <div class="container">
+
+    <p><b>Username: </b> {{ username }} </p>
+    <p><b>Nome reale: </b> {{ nome }} {{ cognome }} </p>
+    <p><b>Permessi: </b> {{ permessi }} </p>
+    <p><b>Lunghezza username:</b> {{ username.length }} </p>
+
+    <button id="btnObservable">Cambia username (@observable)</button><br/>
+    <button id="btn">Cambia permessi</button>
+
+  </div>
+  <script type="application/dart">
+    import 'dart:html';
+    import 'package:web_ui/web_ui.dart';
+
+    @observable
+    String username = 'm.rossi';
+
+    String nome = 'Mario';
+    String cognome = 'Rossi';
+    String permessi = 'Admin';
+
+    void main() {
+      query('#btnObservable').onClick.listen((_){
+        username = 'mario.rossi';
+      });
+
+      query('#btn').onClick.listen((_){
+        permessi = 'Moderatore';
+      });
+
+    }
+
+  </script>
+  </body>
+</html>

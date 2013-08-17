@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+<element name="x-countdown" constructor="CountdownComponent" extends="div">
+  <template>
+    <content></content>
+    <p>{{ count }}</p>
+    <p><b>Inizio countdown: </b>{{ inizio }}<br/>
+    <b>Fine countdown: </b>{{ fine }}</p>
+    <button on-click="avvio()">Avvia countdown</button>
+  </template>
+  <script src="countdown.dart" type="application/dart"></script>
+</element>
+</body>
+</html>

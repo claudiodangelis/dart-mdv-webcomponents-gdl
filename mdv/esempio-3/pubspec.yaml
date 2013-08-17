@@ -1,0 +1,5 @@
+name: sample_app
+dependencies:
+    browser: any
+    web_ui: any
+

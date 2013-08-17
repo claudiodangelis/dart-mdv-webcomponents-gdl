@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sample App</title>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+  </head>
+  <body>
+  <div class="container" template iterate='utente in utenti'>
+
+    <p><b>Username: </b> {{ utente.username }} </p>
+    <p><b>Nome reale: </b> {{ utente.nome }} {{ utente.cognome }} </p>
+    <p><b>Permessi: </b> {{ utente.permessi }} </p>
+    <hr/>
+
+  </div>
+  <script type="application/dart">
+
+    class Utente {
+      final String username;
+      String nome;
+      String cognome;
+      String permessi;
+
+      Utente(this.username);
+    }
+
+    Utente a = new Utente('m.rossi');
+    Utente b = new Utente('l.bianchi');
+    Utente c = new Utente('asd');
+
+    List<Utente> utenti = [a,b,c];
+
+    void main() {
+      a.nome = 'Mario';
+      a.cognome = 'Rossi';
+      a.permessi = 'Admin';
+
+      b.nome = 'Luigi';
+      b.cognome = 'Bianchi';
+      b.permessi = 'Moderatore';
+
+      c.nome = 'Asd';
+      c.cognome = 'Asd';
+      c.permessi = 'Utente';
+    }
+
+  </script>
+  </body>
+</html>

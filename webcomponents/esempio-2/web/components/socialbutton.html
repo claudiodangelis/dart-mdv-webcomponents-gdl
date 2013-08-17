@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+<body>
+<element name="social-button" constructor="SocialButtonComponent" extends="div">
+  <style type="text/css" scoped>
+    #btn {
+      font-size:x-small;
+      margin:5px;
+      padding:3px;
+      color:white;
+      border-radius:2px;
+      width:170px;
+      text-align:center;
+      box-shadow: 1px 1px 1px #888;
+    }
+
+    #btn a, a:hover, a:visited, a:active {
+      color:white;
+      text-decoration: none;
+    }
+
+    #network {
+      text-transform: capitalize;
+    }
+
+  </style>
+  <template>
+    <p id="btn" style="background-color:{{bg}}">
+      <a href="{{ url }}">
+        Follow {{name}} on <span id="network">{{network}}</span>
+      </a>
+    </p>
+  </template>
+  <script src="socialbutton.dart" type="application/dart"></script>
+</element>
+</body>
+</html>
